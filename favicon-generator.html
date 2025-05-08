@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevCraft Favicon Generator</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #00B4D8;
+    }
+    .preview-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .preview {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+    button {
+      background-color: #00B4D8;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #0096B7;
+    }
+    .dark-mode {
+      background-color: #333;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .dark-mode h2 {
+      color: white;
+    }
+    pre {
+      background-color: #f0f0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    .svg-display {
+      border: 1px dashed #ccc;
+      margin: 20px 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .inline-svg {
+      width: 64px;
+      height: 64px;
+      display: inline-block;
+    }
+    .inline-svg-small {
+      width: 32px;
+      height: 32px;
+      display: inline-block;
+    }
+    .svg-container {
+      margin: 10px 0;
+    }
+    .dark-preview {
+      background-color: #222;
+      border-color: #444;
+    }
+    .dark-text {
+      color: white;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    
+    /* Global styles to ensure cursor colors are correct */
+    .preview:not(.dark-preview) svg .cursor {
+      fill: #1A1A1A !important;
+    }
+    .dark-preview svg .cursor {
+      fill: white !important;
+    }
+    .svg-display svg .cursor {
+      fill: #1A1A1A !important;
+    }
+  </style>
+</head>
+<body>
+  <h1>DevCraft Favicon Generator</h1>
+  <p>This page helps you visualize and download the favicon in different sizes.</p>
+  
+  <div class="svg-display">
+    <h2>Current SVG Favicon</h2>
+    <div class="svg-container">
+      <!-- Inline SVG for guaranteed display -->
+      <svg class="inline-svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          /* Force the cursor to be dark in light mode */
+          .cursor { fill: #1A1A1A !important; }
+        </style>
+        
+        <!-- Background (transparent) -->
+        <rect width="32" height="32" fill="none"/>
+        
+        <!-- Typewriter cursor (joined Ts) - 80% of original size -->
+        <g class="cursor" transform="translate(9, 15.3) scale(0.8) translate(-9, -15.3)">
+          <!-- Vertical line for both Ts -->
+          <rect x="8.25" y="7" width="1.5" height="18"/>
+          
+          <!-- Top T horizontal -->
+          <rect x="6" y="7" width="6" height="1.5"/>
+          
+          <!-- Bottom T horizontal -->
+          <rect x="6" y="23.5" width="6" height="1.5"/>
+        </g>
+        
+        <!-- Blue "f" character in Cormorant Garamond italic style - improved to match logo -->
+        <path d="M20.5 8c-1 0-1.8 0.2-2.3 0.7c-0.6 0.5-0.9 1.2-1.1 2.3h-1v1.5h1v10c0 0.8-0.1 1.3-0.4 1.6c-0.3 0.3-0.7 0.4-1.3 0.4c-0.4 0-0.7-0.1-1-0.2l-0.4 1.5c0.5 0.2 1.1 0.2 1.7 0.2c1.1 0 1.9-0.3 2.4-0.8c0.5-0.5 0.8-1.4 0.8-2.5v-10.2h2v-1.5h-2c0.1-0.8 0.3-1.4 0.6-1.7c0.3-0.3 0.8-0.5 1.5-0.5c0.5 0 0.9 0.1 1.3 0.2l0.4-1.5c-0.6-0.2-1.3-0.3-1.9-0.3z" fill="#00B4D8" style="font-style: italic; transform: skewX(-12deg) translateX(1px);"/>
+      </svg>
+    </div>
+    <p><small>Note: The cursor should appear as dark gray (#1A1A1A) in light mode and white in dark mode.</small></p>
+  </div>
+  
+  <h2>Light Mode Preview</h2>
+  <div class="preview-container">
+    <div class="preview">
+      <svg class="inline-svg-small" width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .cursor { fill: #1A1A1A; }
+        </style>
+        <rect width="32" height="32" fill="none"/>
+        <g class="cursor" transform="translate(9, 15.3) scale(0.8) translate(-9, -15.3)">
+          <!-- Vertical line for both Ts -->
+          <rect x="8.25" y="7" width="1.5" height="18"/>
+          
+          <!-- Top T horizontal -->
+          <rect x="6" y="7" width="6" height="1.5"/>
+          
+          <!-- Bottom T horizontal -->
+          <rect x="6" y="23.5" width="6" height="1.5"/>
+        </g>
+        <path d="M20.5 8c-1 0-1.8 0.2-2.3 0.7c-0.6 0.5-0.9 1.2-1.1 2.3h-1v1.5h1v10c0 0.8-0.1 1.3-0.4 1.6c-0.3 0.3-0.7 0.4-1.3 0.4c-0.4 0-0.7-0.1-1-0.2l-0.4 1.5c0.5 0.2 1.1 0.2 1.7 0.2c1.1 0 1.9-0.3 2.4-0.8c0.5-0.5 0.8-1.4 0.8-2.5v-10.2h2v-1.5h-2c0.1-0.8 0.3-1.4 0.6-1.7c0.3-0.3 0.8-0.5 1.5-0.5c0.5 0 0.9 0.1 1.3 0.2l0.4-1.5c-0.6-0.2-1.3-0.3-1.9-0.3z" fill="#00B4D8" style="font-style: italic; transform: skewX(-12deg) translateX(1px);"/>
+      </svg>
+      <p>16x16</p>
+      <button onclick="generatePNG(16, 16, 'favicon-16x16.png')">Download PNG</button>
+    </div>
+    <div class="preview">
+      <svg class="inline-svg-small" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .cursor { fill: #1A1A1A; }
+        </style>
+        <rect width="32" height="32" fill="none"/>
+        <g class="cursor" transform="translate(9, 15.3) scale(0.8) translate(-9, -15.3)">
+          <!-- Vertical line for both Ts -->
+          <rect x="8.25" y="7" width="1.5" height="18"/>
+          
+          <!-- Top T horizontal -->
+          <rect x="6" y="7" width="6" height="1.5"/>
+          
+          <!-- Bottom T horizontal -->
+          <rect x="6" y="23.5" width="6" height="1.5"/>
+        </g>
+        <path d="M20.5 8c-1 0-1.8 0.2-2.3 0.7c-0.6 0.5-0.9 1.2-1.1 2.3h-1v1.5h1v10c0 0.8-0.1 1.3-0.4 1.6c-0.3 0.3-0.7 0.4-1.3 0.4c-0.4 0-0.7-0.1-1-0.2l-0.4 1.5c0.5 0.2 1.1 0.2 1.7 0.2c1.1 0 1.9-0.3 2.4-0.8c0.5-0.5 0.8-1.4 0.8-2.5v-10.2h2v-1.5h-2c0.1-0.8 0.3-1.4 0.6-1.7c0.3-0.3 0.8-0.5 1.5-0.5c0.5 0 0.9 0.1 1.3 0.2l0.4-1.5c-0.6-0.2-1.3-0.3-1.9-0.3z" fill="#00B4D8" style="font-style: italic; transform: skewX(-12deg) translateX(1px);"/>
+      </svg>
+      <p>32x32</p>
+      <button onclick="generatePNG(32, 32, 'favicon-32x32.png')">Download PNG</button>
+    </div>
+    <div class="preview">
+      <svg class="inline-svg-small" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .cursor { fill: #1A1A1A; }
+        </style>
+        <rect width="32" height="32" fill="none"/>
+        <g class="cursor" transform="translate(9, 15.3) scale(0.8) translate(-9, -15.3)">
+          <!-- Vertical line for both Ts -->
+          <rect x="8.25" y="7" width="1.5" height="18"/>
+          
+          <!-- Top T horizontal -->
+          <rect x="6" y="7" width="6" height="1.5"/>
+          
+          <!-- Bottom T horizontal -->
+          <rect x="6" y="23.5" width="6" height="1.5"/>
+        </g>
+        <path d="M20.5 8c-1 0-1.8 0.2-2.3 0.7c-0.6 0.5-0.9 1.2-1.1 2.3h-1v1.5h1v10c0 0.8-0.1 1.3-0.4 1.6c-0.3 0.3-0.7 0.4-1.3 0.4c-0.4 0-0.7-0.1-1-0.2l-0.4 1.5c0.5 0.2 1.1 0.2 1.7 0.2c1.1 0 1.9-0.3 2.4-0.8c0.5-0.5 0.8-1.4 0.8-2.5v-10.2h2v-1.5h-2c0.1-0.8 0.3-1.4 0.6-1.7c0.3-0.3 0.8-0.5 1.5-0.5c0.5 0 0.9 0.1 1.3 0.2l0.4-1.5c-0.6-0.2-1.3-0.3-1.9-0.3z" fill="#00B4D8" style="font-style: italic; transform: skewX(-12deg) translateX(1px);"/>
+      </svg>
+      <p>180x180 (Apple Touch)</p>
+      <button onclick="generatePNG(180, 180, 'apple-touch-icon.png')">Download PNG</button>
+    </div>
+  </div>
+
+  <div class="dark-mode">
+    <h2>Dark Mode Preview</h2>
+    <div class="preview-container">
+      <div class="preview dark-preview">
+        <svg class="inline-svg-small" width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            .cursor { fill: white; }
+          </style>
+          <rect width="32" height="32" fill="none"/>
+          <g class="cursor" transform="translate(9, 15.3) scale(0.8) translate(-9, -15.3)">
+            <!-- Vertical line for both Ts -->
+            <rect x="8.25" y="7" width="1.5" height="18"/>
+            
+            <!-- Top T horizontal -->
+            <rect x="6" y="7" width="6" height="1.5"/>
+            
+            <!-- Bottom T horizontal -->
+            <rect x="6" y="23.5" width="6" height="1.5"/>
+          </g>
+          <path d="M20.5 8c-1 0-1.8 0.2-2.3 0.7c-0.6 0.5-0.9 1.2-1.1 2.3h-1v1.5h1v10c0 0.8-0.1 1.3-0.4 1.6c-0.3 0.3-0.7 0.4-1.3 0.4c-0.4 0-0.7-0.1-1-0.2l-0.4 1.5c0.5 0.2 1.1 0.2 1.7 0.2c1.1 0 1.9-0.3 2.4-0.8c0.5-0.5 0.8-1.4 0.8-2.5v-10.2h2v-1.5h-2c0.1-0.8 0.3-1.4 0.6-1.7c0.3-0.3 0.8-0.5 1.5-0.5c0.5 0 0.9 0.1 1.3 0.2l0.4-1.5c-0.6-0.2-1.3-0.3-1.9-0.3z" fill="#00B4D8" style="font-style: italic; transform: skewX(-12deg) translateX(1px);"/>
+        </svg>
+        <p class="dark-text">16x16</p>
+        <button onclick="generateDarkPNG(16, 16, 'favicon-dark-16x16.png')">Download PNG</button>
+      </div>
+      <div class="preview dark-preview">
+        <svg class="inline-svg-small" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            .cursor { fill: white; }
+          </style>
+          <rect width="32" height="32" fill="none"/>
+          <g class="cursor" transform="translate(9, 15.3) scale(0.8) translate(-9, -15.3)">
+            <!-- Vertical line for both Ts -->
+            <rect x="8.25" y="7" width="1.5" height="18"/>
+            
+            <!-- Top T horizontal -->
+            <rect x="6" y="7" width="6" height="1.5"/>
+            
+            <!-- Bottom T horizontal -->
+            <rect x="6" y="23.5" width="6" height="1.5"/>
+          </g>
+          <path d="M20.5 8c-1 0-1.8 0.2-2.3 0.7c-0.6 0.5-0.9 1.2-1.1 2.3h-1v1.5h1v10c0 0.8-0.1 1.3-0.4 1.6c-0.3 0.3-0.7 0.4-1.3 0.4c-0.4 0-0.7-0.1-1-0.2l-0.4 1.5c0.5 0.2 1.1 0.2 1.7 0.2c1.1 0 1.9-0.3 2.4-0.8c0.5-0.5 0.8-1.4 0.8-2.5v-10.2h2v-1.5h-2c0.1-0.8 0.3-1.4 0.6-1.7c0.3-0.3 0.8-0.5 1.5-0.5c0.5 0 0.9 0.1 1.3 0.2l0.4-1.5c-0.6-0.2-1.3-0.3-1.9-0.3z" fill="#00B4D8" style="font-style: italic; transform: skewX(-12deg) translateX(1px);"/>
+        </svg>
+        <p class="dark-text">32x32</p>
+        <button onclick="generateDarkPNG(32, 32, 'favicon-dark-32x32.png')">Download PNG</button>
+      </div>
+      <div class="preview dark-preview">
+        <svg class="inline-svg-small" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            .cursor { fill: white; }
+          </style>
+          <rect width="32" height="32" fill="none"/>
+          <g class="cursor" transform="translate(9, 15.3) scale(0.8) translate(-9, -15.3)">
+            <!-- Vertical line for both Ts -->
+            <rect x="8.25" y="7" width="1.5" height="18"/>
+            
+            <!-- Top T horizontal -->
+            <rect x="6" y="7" width="6" height="1.5"/>
+            
+            <!-- Bottom T horizontal -->
+            <rect x="6" y="23.5" width="6" height="1.5"/>
+          </g>
+          <path d="M20.5 8c-1 0-1.8 0.2-2.3 0.7c-0.6 0.5-0.9 1.2-1.1 2.3h-1v1.5h1v10c0 0.8-0.1 1.3-0.4 1.6c-0.3 0.3-0.7 0.4-1.3 0.4c-0.4 0-0.7-0.1-1-0.2l-0.4 1.5c0.5 0.2 1.1 0.2 1.7 0.2c1.1 0 1.9-0.3 2.4-0.8c0.5-0.5 0.8-1.4 0.8-2.5v-10.2h2v-1.5h-2c0.1-0.8 0.3-1.4 0.6-1.7c0.3-0.3 0.8-0.5 1.5-0.5c0.5 0 0.9 0.1 1.3 0.2l0.4-1.5c-0.6-0.2-1.3-0.3-1.9-0.3z" fill="#00B4D8" style="font-style: italic; transform: skewX(-12deg) translateX(1px);"/>
+        </svg>
+        <p class="dark-text">180x180 (Apple Touch)</p>
+        <button onclick="generateDarkPNG(180, 180, 'apple-touch-icon-dark.png')">Download PNG</button>
+      </div>
+    </div>
+  </div>
+
+  <h2>Installation Instructions</h2>
+  <p>After downloading the favicon files, place them in your project's <code>public</code> folder and add the following code to your HTML:</p>
+  <pre>&lt;link rel="icon" type="image/svg+xml" href="/favicon.svg" /&gt;
+&lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /&gt;
+&lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" /&gt;
+&lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /&gt;
+&lt;link rel="manifest" href="/site.webmanifest" /&gt;</pre>
+
+  <script>
+    // Function to generate PNG from SVG
+    function generatePNG(width, height, filename) {
+      // Create a new SVG with dark cursor for light mode
+      const svgContent = `
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .cursor { fill: #1A1A1A; }
+        </style>
+        <rect width="32" height="32" fill="none"/>
+        <g class="cursor" transform="translate(9, 15.3) scale(0.8) translate(-9, -15.3)">
+          <!-- Vertical line for both Ts -->
+          <rect x="8.25" y="7" width="1.5" height="18"/>
+          
+          <!-- Top T horizontal -->
+          <rect x="6" y="7" width="6" height="1.5"/>
+          
+          <!-- Bottom T horizontal -->
+          <rect x="6" y="23.5" width="6" height="1.5"/>
+        </g>
+        <path d="M20.5 8c-1 0-1.8 0.2-2.3 0.7c-0.6 0.5-0.9 1.2-1.1 2.3h-1v1.5h1v10c0 0.8-0.1 1.3-0.4 1.6c-0.3 0.3-0.7 0.4-1.3 0.4c-0.4 0-0.7-0.1-1-0.2l-0.4 1.5c0.5 0.2 1.1 0.2 1.7 0.2c1.1 0 1.9-0.3 2.4-0.8c0.5-0.5 0.8-1.4 0.8-2.5v-10.2h2v-1.5h-2c0.1-0.8 0.3-1.4 0.6-1.7c0.3-0.3 0.8-0.5 1.5-0.5c0.5 0 0.9 0.1 1.3 0.2l0.4-1.5c-0.6-0.2-1.3-0.3-1.9-0.3z" fill="#00B4D8" style="font-style: italic; transform: skewX(-12deg) translateX(1px);"/>
+      </svg>`;
+      
+      // Create canvas
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      
+      // Create image from SVG
+      const img = new Image();
+      img.onload = function() {
+        ctx.drawImage(img, 0, 0, width, height);
+        
+        // Download as PNG
+        canvas.toBlob(function(blob) {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        }, 'image/png');
+      };
+      
+      // Convert SVG to data URL
+      const svgBlob = new Blob([svgContent], {type: 'image/svg+xml;charset=utf-8'});
+      const svgUrl = URL.createObjectURL(svgBlob);
+      img.src = svgUrl;
+    }
+    
+    // Function to generate dark mode PNG from SVG
+    function generateDarkPNG(width, height, filename) {
+      // Create a modified SVG with white cursor
+      const svgContent = `
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .cursor { fill: white; }
+        </style>
+        <rect width="32" height="32" fill="none"/>
+        <g class="cursor" transform="translate(9, 15.3) scale(0.8) translate(-9, -15.3)">
+          <!-- Vertical line for both Ts -->
+          <rect x="8.25" y="7" width="1.5" height="18"/>
+          
+          <!-- Top T horizontal -->
+          <rect x="6" y="7" width="6" height="1.5"/>
+          
+          <!-- Bottom T horizontal -->
+          <rect x="6" y="23.5" width="6" height="1.5"/>
+        </g>
+        <path d="M20.5 8c-1 0-1.8 0.2-2.3 0.7c-0.6 0.5-0.9 1.2-1.1 2.3h-1v1.5h1v10c0 0.8-0.1 1.3-0.4 1.6c-0.3 0.3-0.7 0.4-1.3 0.4c-0.4 0-0.7-0.1-1-0.2l-0.4 1.5c0.5 0.2 1.1 0.2 1.7 0.2c1.1 0 1.9-0.3 2.4-0.8c0.5-0.5 0.8-1.4 0.8-2.5v-10.2h2v-1.5h-2c0.1-0.8 0.3-1.4 0.6-1.7c0.3-0.3 0.8-0.5 1.5-0.5c0.5 0 0.9 0.1 1.3 0.2l0.4-1.5c-0.6-0.2-1.3-0.3-1.9-0.3z" fill="#00B4D8" style="font-style: italic; transform: skewX(-12deg) translateX(1px);"/>
+      </svg>`;
+      
+      // Create canvas
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      
+      // Create image from SVG
+      const img = new Image();
+      img.onload = function() {
+        ctx.drawImage(img, 0, 0, width, height);
+        
+        // Download as PNG
+        canvas.toBlob(function(blob) {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        }, 'image/png');
+      };
+      
+      // Convert SVG to data URL
+      const svgBlob = new Blob([svgContent], {type: 'image/svg+xml;charset=utf-8'});
+      const svgUrl = URL.createObjectURL(svgBlob);
+      img.src = svgUrl;
+    }
+  </script>
+</body>
+</html> 
